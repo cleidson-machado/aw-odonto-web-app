@@ -1,0 +1,47 @@
+<div th:fragment="basetab">
+<!-- INICIO body  -->
+<meta charset="utf-8">
+
+<!-- Begin page content -->
+	<div class="container-fluid">
+		<div th:include="/aFragments/shared_title_contratante.html::title"></div>
+		<div th:include="/aFragments/shared_description_contratante.html::description"></div>
+		<div th:include="/aFragments/shared_link_manual.html::linkDoManual"></div>
+	</div>
+	<!-- BARRA BTNS DAS TABELAS -->
+	<div class="container-fluid">
+		<div class="bg-primary clearfix">	  
+			<div th:include="/aFragments/shared_container_menu_contratante::containerMenu"></div>
+		</div>
+	 <br>
+	 </div>
+    
+<div class="table-responsive-md container-fluid">
+
+<table class="table table-bordered table-sm table-striped" id="contratanteTable">
+	 	  <thead class="thead-light">
+		    <tr>
+		      <th scope="col">NOME</th>
+		      <th scope="col">SOBRE-NOME</th>
+		      <th scope="col">CPF</th>
+		      <th scope="col">E-MAIL</th>
+		    </tr>
+		  </thead>
+		  <tbody>		  
+		   	  <tr class="text-danger" th:each="contratante : ${listagemDataTable}">
+		      <td th:text="${contratante.nome}"></td>
+		      <td th:text="${contratante.sobreNome}"></td>
+		      <td th:text="${contratante.cpf}"></td>
+		      <td th:text="${contratante.email1}"></td>
+		    </tr>		    
+		  </tbody>
+
+</table>
+	          
+</div>
+
+<br>
+<br>
+
+<!-- FIM body -->
+</div>

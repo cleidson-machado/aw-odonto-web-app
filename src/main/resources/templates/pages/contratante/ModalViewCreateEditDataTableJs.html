@@ -1,0 +1,58 @@
+<div th:fragment="addEditModal">
+
+	<div class="modal fade" id="addEntityEditModal" 
+		 tabindex="-1" 
+		 aria-labelledby="addModalLabel" 
+		 aria-hidden="true">
+		<form action="#" th:action="@{/contratanteDataTable/saveOrUpdate}" th:object="${contratante}" method="POST">
+			<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="addModalLabel">ADICIONAR NOVA CONTRATANTE...</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+				
+<!-- 				<div class="form-group"> -->
+<!-- 				<label class="col-form-label" for="doCodigo">Codigo Pk:</label> -->
+<!-- 				<input type="text" readonly="true" class="form-control" placeholder="Id Gerado" id="doCodigo" name="codigo"> -->
+<!-- 				</div> -->
+				
+				<!-- <div class="form-group"> -->
+				<!-- <label class="col-form-label" for="doCodigo">Codigo Pk:</label> -->
+				<input type="hidden" readonly="true" class="form-control" placeholder="Id Gerado" id="doCodigo" name="codigo">
+				<!-- </div> -->
+			  
+				<div class="form-group">
+				  <label class="col-form-label" for="doNome">Nome:</label>
+				  <input type="text" class="form-control" placeholder="Add o Nome" id="doNome" name="Nome">
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-form-label" for="doSobreNome">Sobre Nome:</label>
+				  <input type="text" class="form-control" placeholder="Add o Sobre Nome" id="doSobreNome" name="SobreNome">
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-form-label" for="doCpfnum">CPF:</label>
+				  <input type="text" class="form-control" placeholder="Add CPF" id="doCpfnum" name="Cpf">
+				</div>
+	
+				<div class="form-group">
+					<label class="col-form-label" for="doEmail">E-mail:</label>
+					<input type="email" class="form-control" placeholder="Add E-mail" id="doEmail" name="Email1">
+				</div>
+	
+			 </div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-sm mb-3 btn-secondary" data-dismiss="modal">FECHAR</button>
+			  <button type="submit" class="btn btn-sm mb-3 btn-success">SALVAR / EDITAR</button>			  
+			</div>
+		  </div>
+		</div>
+		</form>	
+	  </div>
+	  
+</div>

@@ -1,0 +1,108 @@
+#### DEPLOY APPICATION... ON A COMMAND PROMPT INTERFACE
+
+Aplicação Spring Boot no Heroku: como fazer deploy de uma API RESTful
+https://www.youtube.com/watch?v=dusvP0CFisw
+
+### FREE BASIC PLAN ON HEROKU
+----> 27/08/2020... START A ACCOUNT
+----> LOGIN: CLEIDSON.MAC@OUTLOOK.COM
+----> PASS: @@!!pwd_DEFAULT
+
+### HEROKU HOW TO:
+https://devcenter.heroku.com/articles/heroku-cli]
+https://devcenter.heroku.com/articles/getting-started-with-java
+https://devcenter.heroku.com/articles/heroku-cli#verifying-your-installation
+
+### Deployment methods
+ESSE Heroku SYSTEM.. TEM UMA INTEGRAÇÃO FORTE COM O GIT... Ele pode funcionar de forma manual ou AUTOMATIZADA..
+ISSO QUER DIZER QUE TODAS AS MUDANÇAS NUM REPOSITÓRIO PODEM SER AUTOMATICAMENTE DESENVOLVIDAS NO DEPLOY DO Heroku OU NÃO
+----->FORMA BÁSICA DE UTILIZAÇÃO... DEIXAR UMA CÓPIA VÁLIDA NO REMOTO E ENVIAR AQUELA BRANCH PARA O Heroku
+
+### STEP BY STEP.
+#---> HEROKU LOGIN..
+LOGIN     ------> heroku login
+LIST APPS ------> heroku apps
+DELET APP ------> heroku apps:destroy --app NOME_APP --confirm NOME_APP
+
+#---> CREATE A FIRST APP
+------> heroku create NAME_OF_THE_APP (EXAMPLE: aw-odonto-web-app)
+------> obs: comando acima já cria no GIT também
+
+#---> CREATE A NEW DATA BASE INSTANCE... FREE IS ONLY FOR POSTEGRESS DATA BASE
+------> heroku addons:create heroku-postgresql:hobby-dev
+
+#---> SEND APP TO HOSTING SERVICE
+------> git push heroku master
+
+
+######################################### HOW TO USE GIT HUB WITH THIS HEROKU SYS??
+----> INTEGRATE GIT HUB ON A WINDOWS SYSTEM..
+----> https://git-scm.com/
+----> GIT_SCM É O SITE PARA BAIXAR O SOFTWARE DE LINHA DE COMAMDO PARA INTERAGIR COM OS REPOSITÓRIOS
+----> GIT BASH....
+
+----> Como baixar e instalar o Git - 03
+---------> https://www.youtube.com/watch?v=ONztz-yh4jY
+
+---->GitHub - Configurar Git Bash e subir arquivos para o repositório - Parte 2
+---->https://www.youtube.com/watch?v=GzRxUO41noY
+
+----> HOW TO VERSIONATE MY APP TO GIT.. 
+----> HOW TO INTEGRATE WITH THE STS / ECLIPSE IDE?
+
+----> CURSO COMPLETO DE GIT (2 HORAS E 30 MINUTOS)
+----> https://www.youtube.com/watch?v=OuOb1_qADBQ&t=100s
+https://youtu.be/OuOb1_qADBQ
+
+######################################### USE GIT BASIC COMMANDS
+
+# TESTAR NOVAMENTE OS COMANDOS DE UPLOAD E DOWNLOAD DE UM REPO REMOTO + USO E GERENCIAMENTO DE BRANCHES LOCAIS E REMOTAS.
+AS BRANCHES SÃO SUPER IMPORTANTES NESSE MOMENTO POIS VOU TER QUE TRABALHAR COM DOIS TIPOS DE BANCOS DE DADOS.
+O DBASE GRATUITO NO Heroku É SÓ O POSTGRESS... INSTALAR ESSE CARA NO MEU AMBIENTE DE DESENVOLVIMENTO.. DEPPOIS DE TREINAR E
+AFINS OS COMANDOS DE CRIAÇÃO DAS VERÇÕES E AFINS...
+
+# AO UTILIZAR UM NOVO DIRETÓRIO INTERNO NO PC 
+-----> git init
+
+# PRA ADD MINHAS CREDÊNCIAS AO GIT QUANDO DA 1ª VEZ DE USO... OBS.. MELHOR DIGITAR QUE COLAR..
+-----> git config -–global user.name “Cleidson Machado”
+-----> git config -–global user.email “cleidson.mac@outlook.com”
+
+# VISUALIZAÇÕES DE RETORNO COM INFOS DO SISTEMA DE VERSIONAMENTO
+-----> git status
+-----> git log
+-----> git branch
+
+# COMANDO PARA ADD TODOS ARQUIVOS DA PASTA
+-----> git add -A
+
+# COMIT DAS ATUALUALIZAÇÕES O "am" É DE ARQUIVOS ADICIONADOS OU MODIFICADOS
+-----> git commit -am "NOME_DE_IDENTIFICACAO_DAQUELE_COMMIT_ESPECÍFICO"
+
+# ADD NOVO BRANCH (RAIZ)
+-----> git branch NOME_DO_BRANCH_SEM_ASPAS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<div th:fragment="containerMenu">
+<meta charset="utf-8">
+
+	<button id="btnGroupDrop1" 
+			type="button" 
+	  		class="btn btn-sm my-1 ml-sm-1 btn-primary float-left dropdown-toggle" 
+	  		data-toggle="dropdown" 
+	  		aria-haspopup="true" 
+	  		aria-expanded="false">
+      		RELAT. / BUSCAS  |
+	</button>
+	    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+	      <a class="dropdown-item" href="/contratanteDataTable">Contratantes ( Editar / Excluir - C/ BUSCAS )</a>
+	      <a class="dropdown-item" href="/contratanteDataTableExport">Contratantes ( Export - Copy / Excel / PDF / Print )</a>
+		  
+		  <!-- ASSIM LANÇA O MODAL VIA LINK QUE É REDIRECIONADO PELO JAVASCRIP -->
+		  <!-- <a class="dropdown-item link-especial" href="/contratanteForms/AddNew">Contratantes ( NOVO MODO DE EXIBIR A MODAL C/ VALIDAÇÃO CAMPOS )</a> -->
+		  
+		  <!-- <a class="dropdown-item link-especial" href="/contratanteForms/AddNewExemplo">Contratantes ( EXEMPLO )</a> -->
+		  
+	      <a class="dropdown-item" href="#">Contratantes ( CONTRATOS ATIVOS )</a>
+	      <a class="dropdown-item" href="#">Contratantes ( DESATIVADOS )</a>
+	      <a class="dropdown-item" href="#">Contratantes ( PENDÊNCIAS / DÉBITOS )</a>
+	    </div>
+	<button type="button" 
+    	    class="btn btn-sm my-1 btn-primary float-left" 
+    	    data-toggle="modal" 
+    	    data-target="#addEntityEditModal"
+    	    >| Add NEW Modal c/ Validations |
+  	</button>
+  	<!-- ASSIM LANÇA O MODAL VIA LINK QUE É REDIRECIONADO PELO JAVASCRIP -->
+  	<a class="btn btn-sm my-1 btn-primary float-left link-especial" href="/contratanteForms/AddNewExemplo" >| EXEMPLO Modal JS Redirect |</a>
+	
+	<!-- USANDO UMA ROTA TRADICIONAL -->
+  	<a class="btn btn-sm my-1 btn-primary float-left" href="/contratanteForms/AddNew" >| Add NEW ROUTE Link |</a>
+</div>

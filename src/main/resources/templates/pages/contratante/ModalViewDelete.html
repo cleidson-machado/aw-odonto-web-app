@@ -1,0 +1,28 @@
+<div th:fragment="addDeleteModal">
+<meta charset="utf-8">
+
+	<div class="modal fade" id="deleteModal" 
+		 tabindex="-1" 
+		 role="dialog">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title">ATENÇÃO!</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <p class="lead"><code>VOCÊ DESEJA REALMENTE EXCLUIR O REGISTRO!</code></p>
+	        <p class="lead"><code>ESTA AÇÃO É IRREVERSÍVEL...</code></p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-sm mb-3 btn-secondary" data-dismiss="modal">FECHAR</button>
+	        <a href="" id="deleteLinkBtnTrigger" class="btn btn-sm mb-3 btn-warning"> OK EXCLUIR! </a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	  
+</div>

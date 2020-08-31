@@ -1,0 +1,121 @@
+<div th:fragment="basetab">
+<!-- INICIO body  -->
+<meta charset="utf-8">
+	<!-- Begin page content -->
+	<div class="container-fluid">
+		<div th:include="/aFragments/shared_title_contratante.html::title"></div>
+		<div th:include="/aFragments/shared_description_contratante.html::description"></div>
+		<div th:include="/aFragments/shared_link_manual.html::linkDoManual"></div>
+	</div>
+	<!-- BARRA BTNS DAS TABELAS -->
+	<div class="container-fluid">
+		<div class="bg-primary clearfix">
+			<!-- PARTE COMPARTILHADA -->	  
+			<div th:include="/aFragments/shared_container_menu_contratante.html::containerMenu"></div>
+				
+				<!-- PESQUISA ESPECÍFICA DESSA VIEW -->
+				<form class="form-inline float-right" action="/contratante/page/1?sortField=nome&sortDir=asc&keyword=">
+				    <div class="md-form my-0">
+				    	<input type="hidden" name="sortField" th:value="${sortField}"/>
+				    	<input type="hidden" name="sortDir" th:value="${sortDir}"/>
+						<input class="form-control form-control-sm my-1 mr-sm-1 mb-0" 
+							   type="text" placeholder="Busca geral..."
+							   name="keyword"
+							   th:value="${keyword}">
+						<button class="btn btn-primary btn-sm mr-sm-1 my-1" type="submit"> | PESQUISAR |</button>
+<!-- 						<button class="btn btn-primary btn-sm mr-sm-1 my-1" type="button"> | LIMPAR |</button> -->
+				    </div>	
+			  	</form>
+			  	 	
+		</div>
+	 <!-- <br> -->
+	 </div>
+	 <!-- TABELA -->
+	 <div class="table-responsive-md container-fluid">
+		<table class="table table-bordered table-sm table-striped table-hover" id="contratanteTable" >
+		  <caption>
+			<div th:if="${totalPages > 1}" class="row col-sm-12">
+					<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+						
+						<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">					
+						
+						     <div class="btn-group mr-2" role="group" aria-label="First group">						     	
+						    	<a class="btn btn-primary btn-sm" th:unless="${currentPage < 1}" 
+						    	th:href="@{'/contratante/page/' + 1 + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + '&keyword=' + ${keyword != null ? '' + keyword : ''}}">Primeiro</a>
+						     	
+						     </div>
+						     
+							 <div class="btn-group mr-2" role="group" aria-label="Second group">
+								<a class="btn btn-primary btn-sm" th:if="${currentPage > 1}" 
+								th:href="@{'/contratante/page/' + ${currentPage - 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + '&keyword=' + ${keyword != null ? '' + keyword : ''}}">Anterior</a> 
+								<span class="btn btn-secondary btn-sm" th:unless="${currentPage > 1}">Anterior</span>
+							</div>
+						     
+					    </div>										
+						
+						<div th:if="${totalPages <= 20}" class="btn-group mr-2" role="group" aria-label="First group">
+							<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+							<a class="btn btn-primary btn-sm" th:if="${currentPage != i}" 
+							th:href="@{'/contratante/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + '&keyword=' + ${keyword != null ? '' + keyword : ''}}">[[${i}]]</a>
+							<span class="btn btn-secondary btn-sm" th:unless="${currentPage != i}">[[${i}]]</span></span>
+						</div>
+						
+						<div th:if="${totalPages > 20}" class="btn-group mr-2" role="group" aria-label="First group">
+							&nbsp;<h7 class="btn btn-danger  btn-sm" >Página: [[${currentPage}]] de [[${totalPages}]]</h7>&nbsp;	
+						</div>
+						
+						<div class="btn-group mr-2" role="group" aria-label="Second group">
+							<a class="btn btn-primary btn-sm" th:if="${currentPage < totalPages}" 
+							th:href="@{'/contratante/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + '&keyword=' + ${keyword != null ? '' + keyword : ''}}">Próximo</a> 
+							<span class="btn btn-secondary btn-sm" th:unless="${currentPage < totalPages}">Próximo</span>
+						</div>
+		
+						<div class="btn-group mr-2" role="group" aria-label="Third group">
+							<a class="btn btn-primary btn-sm" th:if="${currentPage < totalPages}" 
+							th:href="@{'/contratante/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir} + '&keyword=' + ${keyword != null ? '' + keyword : ''}}">Último</a> 
+							<span class="btn btn-secondary btn-sm" th:unless="${currentPage < totalPages}">Último</span>
+						</div>
+						
+						<div th:if="${totalPages <= 20}" class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+						     <div class="btn-group mr-2" role="group" aria-label="First group">
+						     	<h7 class="btn btn-info btn-sm">Total de Registros: [[${totalItems}]]</h7>						     	
+						     </div>
+					    </div>
+						
+					</div>
+			</div>
+		  </caption>
+		  <thead class="thead-dark">
+		    <tr>
+		      <th scope="col"><a th:href="@{'/contratante/page/' + ${currentPage} + '?sortField=nome&sortDir=' + ${reverseSortDir} + '&keyword=' + ${keyword != null ? '' + keyword : ''}}">NOME</a></th>
+		      <th scope="col"><a th:href="@{'/contratante/page/' + ${currentPage} + '?sortField=sobreNome&sortDir=' + ${reverseSortDir} + '&keyword=' + ${keyword != null ? '' + keyword : ''}}">SOBRE-NOME</a></th>
+		      <th scope="col"><a th:href="@{'/contratante/page/' + ${currentPage} + '?sortField=cpf&sortDir=' + ${reverseSortDir} + '&keyword=' + ${keyword != null ? '' + keyword : ''}}">CPF</a></th>
+		      <th scope="col"><a th:href="@{'/contratante/page/' + ${currentPage} + '?sortField=email1&sortDir=' + ${reverseSortDir} + '&keyword=' + ${keyword != null ? '' + keyword : ''}}">E-MAIL</a></th>
+		      <th colspan="2">AÇÕES</th>
+		    </tr>
+		  </thead>
+		  <tbody>		  
+		   	  <tr th:each="contratante : ${listagem}">
+		      <td th:text="${contratante.nome}"></td>
+		      <td th:text="${contratante.sobreNome}"></td>
+		      <td th:text="${contratante.cpf}"></td>
+		      <td th:text="${contratante.email1}"></td>
+		      <td align="Center" width="9%">
+			  <!--  http://localhost:8081/selectById?codigo=1 -->
+			  <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+			      
+			      <a sec:authorize="hasRole('ADMIN')" id="editlink" class="btn btn-primary" th:href="@{/contratante/selectById/(codigo=${contratante.codigo})}">EDITAR</a>
+				  <a sec:authorize="hasRole('USER')" id="editlink" class="btn btn-primary disabled" href="">EDITAR</a>
+				  
+				  <a sec:authorize="hasRole('ADMIN')" id="deletelink" class="btn btn-danger" th:href="@{/contratante/deleteById/(codigo=${contratante.codigo})}">EXCLUIR</a>
+				  <a sec:authorize="hasRole('USER')" id="deletelink" class="btn btn-danger disabled" href="">EXCLUIR</a>
+				  
+			  </div>
+		      </td>
+		    </tr>		    
+		  </tbody>
+		</table>		
+		
+	</div>	 
+<!-- FIM body -->
+</div>

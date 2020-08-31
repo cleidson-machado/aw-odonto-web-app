@@ -1,0 +1,62 @@
+<div th:fragment="basetab">
+<!-- INICIO body  -->
+<meta charset="utf-8">
+
+<!-- Begin page content -->
+	<div class="container-fluid">
+		<div th:include="/aFragments/shared_title_contratante.html::title"></div>
+		<div th:include="/aFragments/shared_description_contratante.html::description"></div>
+		<div th:include="/aFragments/shared_link_manual.html::linkDoManual"></div>
+	</div>
+	<!-- BARRA BTNS DAS TABELAS -->
+	<div class="container-fluid">
+		<div class="bg-primary clearfix">	  
+			<div th:include="/aFragments/shared_container_menu_contratante.html::containerMenu"></div>
+		</div>
+	 <br>
+	 </div>
+    
+<div class="table-responsive-md container-fluid">
+
+<table class="table table-bordered table-sm table-striped table-hover" id="contratanteTable">
+	 	  <thead class="thead-dark">
+		    <tr>
+		      <th scope="col">NOME</th>
+		      <th scope="col">SOBRE-NOME</th>
+		      <th scope="col">CPF</th>
+		      <th scope="col">E-MAIL</th>
+		      <th scope="col">AÇÕES</th>		  
+		    </tr>
+		  </thead>
+		  <tbody>		  
+		   	  <tr th:each="contratante : ${listagemDataTable}">
+		      <td th:text="${contratante.nome}"></td>
+		      <td th:text="${contratante.sobreNome}"></td>
+		      <td th:text="${contratante.cpf}"></td>
+		      <td th:text="${contratante.email1}"></td>
+		      <td align="Center" width="9%">
+		      <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+			      <a id="editlink" class="btn btn-primary" th:href="@{/contratanteDataTable/selectById/(codigo=${contratante.codigo})}">EDITAR</a>
+				  <a id="deletelink" class="btn btn-danger" th:href="@{/contratanteDataTable/deleteById/(codigo=${contratante.codigo})}">EXCLUIR</a>
+			  </div>
+		      </td>
+		    </tr>		    
+		  </tbody>
+<!-- 		  <tfoot class="thead-dark"> -->
+<!--             <tr> -->
+<!-- 		      <th scope="col">NOME</th> -->
+<!-- 		      <th scope="col">SOBRE-NOME</th> -->
+<!-- 		      <th scope="col">CPF</th> -->
+<!-- 		      <th scope="col">E-MAIL</th> -->
+<!-- 		      <th scope="col">AÇÕES</th> -->
+<!--             </tr> -->
+<!--         </tfoot>	 	   -->
+</table>
+	          
+</div>
+
+<br>
+<br>
+
+<!-- FIM body -->
+</div>

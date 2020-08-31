@@ -1,0 +1,171 @@
+## Bootstrap 4 Filters (Advanced)
+## Bootstrap does not have a component that allows filtering. However, we can use jQuery to filter / search for elements.
+https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_filters_table&stacked=h
+---------------------------------
+## SITE COM EXEMPLOS DE UMA VERSÃO "PAGA" DE LAYOUTS
+mdbootstrap.com/docs/jquery/navigation/navbar/
+---------------------------------
+## EXEMPLOS DE NAVBAR
+https://getbootstrap.com/docs/4.0/examples/navbars/
+https://getbootstrap.com/docs/3.3/examples/navbar-fixed-top/
+https://getbootstrap.com/2.3.2/examples/sticky-footer-navbar.html
+https://getbootstrap.com/docs/4.5/examples/navbar-fixed/
+---------------------------------
+## EXEMPLOS DE LOGIN PAGE
+https://getbootstrap.com/docs/4.5/examples/floating-labels/
+---------------------------------
+
+## EXEMPLOS DE LAYOUTS COMPLEXOS
+https://pixinvent.com/
+https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/html/rtl/vertical-menu-template/index.html
+---------------------------------
+---------------------------------
+## THYMELEAF STANDARD LAYOUT SYSTEM
+Inclusion with th:insert and th:replace
+https://www.thymeleaf.org/doc/articles/layouts.html
+## THYMELEAF STANDARD LAYOUT SYSTEM - EXEMPLOS 2 years ago
+https://github.com/thymeleaf/thymeleafexamples-layouts
+---------------------------------
+NEXT STEP... EM 09/07/2020
+NAVEGAÇÕES... O RESTANTE DOS INCLUDES.........######## OK!..
+E ATIVAR OS BOTÕES NO DATATABLE JS DE TESTE!..######## OK!.. COM AJUDA DO LINKS ABAIXO!
+Evento click se perde na página seguinte na paginação
+https://pt.stackoverflow.com/questions/82551/evento-click-se-perde-na-p%C3%A1gina-seguinte-na-pagina%C3%A7%C3%A3o
+https://www.it-swarm.dev/pt/javascript/datatables-jquery-clique-em-evento-nao-funciona-apos-paginacao/822584314/
+https://tableless.com.br/paginacao-com-javascript-e-jquery/
+https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript/Elementos_construtivos/Events
+// PESQUISEI NO GOOGLE ASSIM: onclick javascript nao funciona paginada
+//SEQUENCIA CORRETA: ID-TABELA --> CLICK ---> ID-LINK
+$("#contratanteTable").on("click", "#editlink", function(e)
+---------------------------------
+NEXT STEP... EM 10/07/2020
+TERMINAR DE ADD A PAGINAÇÃO NO PADRÃO DO THYMELEAF... ######## OK! PARCIAL.. 
+----> NÃO ESTÁ LIMITANDO A QUANTIDADE DE PÁGINAS... RESOLVI PARCIAL COM A MUDANÇA DE LOGICA DE EXIBIÇÃO NA VIEW
+BUSCAS COM EXEMPLO USANDO PESQUISA NO BANCO DE DADOS COM RETORNO NA VIEW... ######## OK!.. ESTUDAR / DOCUMENTAR MELHOR
+
+DEPOIS ADD EXPORTAÇÃO DOS DATATABLES PARA EXCEL E PDF ######## OK! USANDO OS CODIGOS DO DATATABLES.NET
+14/07/2020 --> JASPER REPORT E OU SEMELHANTES........... AINDA NÃO COGITADOS NESSE MOMENTO, JÁ QUE O DO JAVASCIPT FUNCIONOU BEM.... 
+
+---------------------------------
+COMO UTILIZAR O FIREBIRD COM BANCO DE DADOS DESSE APP? ######## OK! SEM INTERAÇÕES DE CRIAÇÃO DO DB VIA COD JAVA E AFINS
+https://firebirdsql.github.io/jaybird-manual/jaybird_manual.html
+https://github.com/FirebirdSQL/jaybird-manual
+-----> ######## OK! CONSEGUI DEIXAR O BÁSICO DE INTERAÇÕES FUNCIONANDO COM O FLYWAY... VERSIONADOR P/ BD.. ESTUDAR MELHOR
+-----> ######## OK!TAMBÉM CONSEGUI RESTAURAR DO 2.5 P/ O 3.0 UM DAS BASES ANTIGAS DA GERENCIAL P/ ESTUDOS FUTUROS..
+-----> VERIFICAR MELHOR... ASSUNTOS QUE POSSAM AGREGAR A UM PORTIFILIO COM ESSE BANCO E AFINS.. COMO ESSE ABAIXO:
+##### COMO CONFIGURAR UM SERVIDOR FIREBIRD NA AMAZON?
+https://www.youtube.com/watch?v=_xiXP2ImPAg
+https://youtu.be/_xiXP2ImPAg
+##### MIGRAÇÃO FIREBIRD 2.5 PARA FIREBIRD 3.0 30% MAIS RÁPIDA!!
+https://youtu.be/TDXzCcLsFmE
+youtube.com/watch?v=TDXzCcLsFmE
+##### ESTUDOS SOBRE QUAL A MELHOR FORMA DE UTILIZAR O VERSIONADOR DE BANCO DE DADOS..
+https://flywaydb.org/documentation/migrations#repeatable-migrations
+---------------------------------
+---------------------------------
+SEGURANÇA NO SITE COM LOGIN E SENHAS ######## OK! NO BÁSICO COM BLOQUEIO ACESSO A ALGUNS BTNS VIA PERFIL BÁSICO
+----> PERSONALIZAÇÕES DAS PAGINAS DE ERRO AO TENTAR ACESSO A ROTAS QUE NÃO EXITAM ######## OK!
+----- <!-- USE ESSE CARA PARA TESTAR/FORÇAR ERRO 500 COMUM [[$pageTitle]] -->
+----> PERSONALIZAÇÕES DAS PAGINAS DE ERRO AO TENTAR ACESSO AS ROTAS / AREAS RESTRITAS... ######## OK!
+----> PERSONALIZAÇÕES DAS PAGINAS DE ERRO 500 BASICOS NO SERVER / COD THYMELEAF NAS VIEWS ######## OK!
+
+----> Spring Boot - Custom Error Page in Thymeleaf
+----> https://www.logicbig.com/tutorials/spring-framework/spring-boot/custom-thymeleaf-error-page.html
+----> https://dzone.com/articles/custom-error-page-with-thymeleaf
+
+----> PERSONALIZAÇÕES DA PAGINA DE LOGIN... COMO DEFINIR LOGIN PELAS COLUNAS DE E-MAIL.. NOME.. CPF E AFINS.?
+----> ESSE VIDEO COMTEM AS PERSONALIZAÇÕES QUE USO NO LOGIN LOGOUT DESSE PROJETO...
+####  Spring Boot Security Customize Login and Logout
+----> youtube.com/watch?v=_-CqWDqWaNk&feature=youtu.be&list=PLR2yPNIFMlL9UUF6-syrVrNaRwHVJofZE
+----> https://youtu.be/_-CqWDqWaNk?list=PLR2yPNIFMlL9UUF6-syrVrNaRwHVJofZE
+----> #### ESTUDAR A CLASSE QUE TRABALHA COM UMA CONTROLLER ESPECIAL PARA OS PROCESSOS DE LOGOUT..
+---------------------------------
+
+### VALIDAÇÕES CLIENT-SIDE (FRONT-END) USANDO O BOOTSTRAP E JAVASCRIPT NOS CAMPOS ######## OK!
+----> UTILIZEI NO CASO UMA VALIDAÇÃO COM TÉCNICAS DO BOOTSTRAP + JAVASCRIP MESMO...
+----> LINK DE SITE EXEMPLIFICA VALIDAÇÃO VIA JAVASCRIP ESPECIALIZADO
+--------> bootstrapvalidator.votintsev.ru/examples/bootbox/
+--------> bootstrapvalidator.votintsev.ru/examples/modal/
+--------> qtzar.com/2017/03/24/ajax-and-thymeleaf-for-modal-dialogs/
+
+### VALIDAÇÕES BACK-SIDE (BACK-END) USANDO O SPRING VALIDATION E AFINS...
+-----> SÓ FUNCIONA BEM SE (((NÃO UTILIZAR))) O MODAL... POR CONTA DAS ROTAS E AFINS..
+-----> FUNCIONA PARCIALMENTE NO SISTEMA ATUAL... POIS UTILIZO O MODAL.... LAPIDAR / REFAZER MELHOR!!!!! ######## OK!
+-----> RECRIADO NA FORMA TRADICIONAL.. COMO DOCUMENTAÇÃO PARA USO / ESTUDO.. NO FUTURO....... ######## OK!
+
+### REFAZER PAGINAS DE LOGIN E LOGOUT COM VALIDAÇÃO NO FRONT-END....... ######## OK!
+-----> FALTAM ALGUNS APRIMORAMENTOS COMO: UNIFICAR COD HTML USANDO FRAGMENTOS E AFINS, MELHORAR MSN DE VALIDAÇÃO CAMPOS COM JAVASCRIP E BOOTSTRAP
+-----> CRIAR ÁREA LIVRE DO SITE PARA RECUPERAÇÃO DE SENHA E AFINS..??
+
+### COMO USAR MASCARAS PARA ENTRADA DE DADOS? ######## OK!
+-----> FIZ USO DAS MASCARAS NO PROJETO VIA JAVA SCRIP... EXEMPLOS DETALHADOS NOS LINKS ABAIXO:
+---------> https://github.com/RobinHerbots/Inputmask
+---------> https://bootstrapstudio.io/tutorials/input-masks
+---------> http://igorescobar.github.io/jQuery-Mask-Plugin/docs.html
+
+### COMO OBRIGAR SALVAR DADOS DE TESTO EM MAIUSCULO NAS VIEWS BOOTSTRAP?? ######## OK!
+---------> CONSEGUI NO PRIMEIRO MOMENTO APENAS A VISUALIZAÇÃO EM UPPERCASE.. VIA CSS MARK DO BOOTSTRAP
+---------> ESTUDAR... MELHOR... PARACE PROMISSOR!
+---------> https://www.the-art-of-web.com/html/input-field-uppercase/
+---------> https://stackoverflow.com/questions/11100041/how-do-you-automatically-set-text-box-to-uppercase
+
+### COMO CRIAR A ZONA DESMILITARIZADA NO SITE..?? FORA DAS ROTAS DE SEGURANÇA QUE OBRIGAM O LOGIN.. NO SPRING
+
+---------------------------------
+----> CRIAR OUTRA CLASSE NO PROJETO QUE USE FK PARA USAR NA VIEW E SALVAR VINCULANDO NO BANCO COM O COMBO_SELECT E AFINS
+----> EM SEGUIDA RECRIAR TODO O BANCO NO SQL E AFINS...
+----> JUNTO COM AS OUTRAS CLASSES RESPECTIVAS EM JAVA PARA CADA OBJETO...
+----> VIEWS DE TODAS AS AÇOES PREVISTA NA INTERAÇÃO COM USUARIO.
+---------------------------------
+----> PAGINA / MODAL DE CRIAÇÃO DE USUÁRIOS E MANUTENÇÃO DAS SENHAS E AFINS...
+---------------------------------
+----> ADD OUTRAS CLASSES E FUNCIONALIDADES DO EXEMPLO ABAIXO
+----> https://www.sistemaodontologicoonline.com.br/
+----> FINALIZAR TUDO PARA DEIXAR O PROJETO "VENDÁVEL" E AFINS..
+---------------------------------
+
+---------------------------------
+FORMAS DE "PROPAGANDEAR" MEU PORTFOLIO DE FORMA GRATUITA PRIMEIRO EM INGLÊS NA WEB??
+---------------------------------
+
+---------------------------------
+COMO MONTAR UMA LOJA NA INTERNET... PROCEDIMENTOS DE COMPRA DO COMEÇO AO FIM???
+---------------------------------
+
+---------------------------------
+SUGESTÕES DE TÍTULO PARA E-BOOK:
+PROJETOS DE PROGRAMAÇÃO DE A a Z.....
+PROGRAMAÇÃO ORIENTADA A RESULTADOS PRÁTICOS.....
+CHEGA DE CRUD!
+DO CÓDIGO A PRÁTICA REAL DE FORMA RÁPIDA.....
+SAIA DO CRUD AGORA!
+CHEGA DE BLÁ, BLÁ, BLÁ!
+PARE DE PROJETAR, COMEÇE A PROGRAMAR AGORA!
+---------------------------------
+
+## EXEMPLO DE SITE LEGAL / COM LISTAGEM DAS PARTES-SEGMENTOS DE UM SISTEMA-ODONTO COMPLETO
+https://www.sistemaodontologicoonline.com.br/
+11	
+GIT HUB E OU OUTRA FORMA DE VERSIONAR MAIS SIMPLES / GRATUITA / BACKUP E PUBLICAÇÃO...
+##### COMO CONFIGURAR UM SERVIDOR FIREBIRD NA AMAZON?
+https://www.youtube.com/watch?v=_xiXP2ImPAg
+https://youtu.be/_xiXP2ImPAg
+##### ENCONTRAR UMA FORMA DE PUBLICAÇÃO INICIAL GRATUITA E AFINS...
+---------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

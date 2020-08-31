@@ -1,0 +1,70 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--#### INICIO DO LAYOUT CSS #### -->
+    <link th:replace="/bFragmentsCssJsLinks/shared_css_links::bootstraplayoutBaseLink"/>
+    <link th:replace="/bFragmentsCssJsLinks/shared_css_links::fontawesomeBaseLink"/>
+    
+	<!-- USADO NO DATATABLE JS -->
+    <link th:replace="/bFragmentsCssJsLinks/shared_css_links::jquerylayoutBaseLink"/>
+    
+    <!-- USADO NO DATATABLE JS -->
+    <link th:replace="/bFragmentsCssJsLinks/shared_css_links::responsivelayoutBaseLink"/>
+    
+    <!-- TESTES DE INCLUSÃO DAS EXPORTAÇÕES EM JS -->
+	<!--     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css"> -->
+	
+	<!--#### FIM DO LAYOUT CSS #### -->
+    
+    <title>Odonto Clinic - Contratante JS</title>
+  </head>
+  <body>
+  		
+   <!-- HEADER-INSERT VIA TEMPLATE -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" th:include="/aFragments/header::header"></nav>
+
+   <br><!-- ESPAÇOS MARCADOS COM GAMBIARRA DOS BR ADD ESPAÇO NA DIV DOS CONETEUDOS INCLUIDOS -->
+
+   <!-- #### INICIO CONTEUDO E MODAIS UTILIZADOS EM CADA ENTIDADE-VIEW #### -->
+   <!-- BODY-INSERT VIA TEMPLATE / FOR A TABLE AND CONTENT VIEW -->
+   <div th:include="/contratante/ListDataTableJs::basetab"></div>
+   
+   <!-- MODAL-INSERT VIA TEMPLATE / FOR SAVE AND UPDATE ACTIONS -->
+   <div th:include="/contratante/ModalViewCreateEditDataTableJs::addEditModal"></div>
+   
+   <!-- MODAL-INSERT VIA TEMPLATE / FOR DELETE ACTIONS -->
+   <div th:include="/contratante/ModalViewDelete::addDeleteModal"></div>
+   <!-- #### FIM CONTEUDO E MODAIS UTILIZADOS EM CADA ENTIDADE-VIEW #### -->
+   
+	<!--FOOTER-INSERT VIA TEMPLATE -->
+   <footer class="bg-dark text-white mt-4 fixed-bottom" th:include="/aFragments/footer::footer"></footer>
+
+   <!--#### INICIO DO JAVASCRIPT #### -->
+   <script th:replace="/bFragmentsCssJsLinks/shared_js_links::jqueryBaseLink"></script>
+   <script th:replace="/bFragmentsCssJsLinks/shared_js_links::popperBaseLink"></script>
+   <script th:replace="/bFragmentsCssJsLinks/shared_js_links::bootstrapBaseLink"></script>	
+   
+   <!-- #### USADO NO DATATABELE JS APENAS #### -->
+   
+   <script th:replace="/bFragmentsCssJsLinks/shared_js_links::datatablesBaseLink"></script>    
+   <script th:replace="/bFragmentsCssJsLinks/shared_js_links::datatablesJqueryBaseLink"></script>
+   <script th:replace="/bFragmentsCssJsLinks/shared_js_links::datatablesResponsiveBaseLink"></script>
+   <script th:replace="/bFragmentsCssJsLinks/shared_js_links::datatablesPersonalBaseLink"></script>
+   
+   <!-- TESTES DE INCLUSÃO DAS EXPORTAÇÕES EM JS -->
+   <!-- https://datatables.net/extensions/buttons/examples/html5/titleMessage -->
+<!--    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script> -->
+<!--    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>  -->
+<!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>  -->
+<!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>  -->
+   
+   <!-- AQUI ACTIONS ESPECÍFICAS DESSA VIEW -->
+   <script th:replace="/bFragmentsCssJsLinks/shared_js_links::indexViewActionsDataTable"></script>    
+   <!--#### FIM DO JAVASCRIPT #### -->
+
+  </body>
+</html>

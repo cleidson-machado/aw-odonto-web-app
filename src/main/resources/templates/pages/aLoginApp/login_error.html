@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Odonto-Clinic ERROR ACCESS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link href="/static/personal/css/login-page-face.css" rel="stylesheet" id="login-page-face-css">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+	.login-container{
+	    margin-top: 4%;
+	    margin-bottom: 5%;
+	    margin-left: 25%;
+	    margin-right: auto;
+	}
+	.login-form-1{
+	    padding: 2%;
+	    background: #ffffff;
+	    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+	}
+	.login-form-1 h3{
+	    text-align: center;
+	    color: #333;
+	}
+	/* 	AQUI PARA AS CORRES DO FND */
+	.login-form-2{
+	    padding: 5%;
+/* 	    background: #0000CD; */
+	    background: #262626;
+	    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+	}
+	.login-form-2 h3{
+	    text-align: center;
+	    color: #fff;
+	}
+	.login-container form{
+	    padding: 5%;
+	}
+	.btnSubmit
+	{
+	    width: 50%;
+	    border-radius: 1rem;
+	    padding: 1.5%;
+	    border: none;
+	    cursor: pointer;
+	}
+	.login-form-1 .btnSubmit{
+	    font-weight: 600;
+	    color: #fff;
+	    background-color: #0062cc;
+	}
+	.login-form-2 .btnSubmit{
+	    font-weight: 600;
+	    color: #0062cc;
+	    background-color: #fff;
+	}
+	.login-form-2 .ForgetPwd{
+	    color: #fff;
+	    font-weight: 600;
+	    text-decoration: none;
+	}
+	.login-form-1 .ForgetPwd{
+	    color: #0062cc;
+	    font-weight: 600;
+	    text-decoration: none;
+	}
+	/* 	COR DE FUNDO DA PÁGINA */
+	body{
+	  background-color: #737373;
+	  color: white;
+	  font-size: 30px;  
+	}
+	.lead{
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+    <div class="container login-container">
+            <div class="row">
+                <div class="col-md-8 login-form-2">
+                    <h3>| PROJETO - Odonto-Clinic | :-(</h3>
+                    <p class="lead">
+					<code>Seja Bem-Vindo!</code>
+					</p>                 
+                    <form action="#" th:action="@{/doLogin}" class="was-validated" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="uname" placeholder="Seu Email *" name="nome" required />
+                            <div class="valid-feedback">Valid.</div>
+							<!-- <div class="invalid-feedback">Please fill out this field.</div> -->
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="upwd" placeholder="Sua Senha *" name="password" required />
+                        </div>
+                        <div class="form-group">
+<!--                             <input type="submit" class="btnSubmit" value="Login" /> -->
+                            <button type="submit" class="btn btn-primary">LOGIN</button>
+                        </div>
+                        <div class="form-group">
+                            <h6><a href="#" class="ForgetPwd" value="Login">Esqueceu a sua Senha?</a></h6>
+                        </div>
+                    </form>
+                </div>
+            </div>
+         
+	         <div class="row">
+	         	<div class="col-md-8 login-form-1">
+			    <p class="lead">
+					<code>ERRO NO ACESSO - SEU NOME DE LOGIN OU SENHA ESTÃO INCORRETOS!</code>
+				</p>
+				</div>
+			</div>
+			
+        </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--#### INICIO DO LAYOUT CSS #### -->
+    <link th:replace="/bFragmentsCssJsLinks/shared_css_links::bootstraplayoutBaseLink"/>
+    <link th:replace="/bFragmentsCssJsLinks/shared_css_links::fontawesomeBaseLink"/>
+	<!--#### FIM DO LAYOUT CSS #### -->
+    
+    <title>Odonto Clinic - Contratante List</title>
+  </head>
+  <body>
+  		
+   <!-- HEADER-INSERT VIA TEMPLATE -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" th:include="/aFragments/header::header"></nav>
+
+   <br><!-- ESPAÇOS MARCADOS COM GAMBIARRA DOS BR ADD ESPAÇO NA DIV DOS CONETEUDOS INCLUIDOS -->
+	
+   <!-- #### INICIO CONTEUDO E MODAIS UTILIZADOS EM CADA ENTIDADE-VIEW #### -->   
+   <!-- BODY-INSERT VIA TEMPLATE / FOR A TABLE AND CONTENT VIEW -->
+   <div th:include="/contratante/List::basetab"></div>
+   
+   <!-- MODAL-INSERT VIA TEMPLATE / FOR SAVE AND UPDATE ACTIONS -->
+   <div th:include="/contratante/ModalViewCreateEdit::addEditModal"></div>
+   
+   <!-- MODAL TESTE - DE TESTES PARA VALIDAÇÕES -->
+   <div class="modal fade" 
+   		id="myModal"
+   		data-backdrop="static"
+   		data-keyboard="false"
+   		tabindex="-1"
+		role="dialog"
+		aria-labelledby="addModalLabel"
+		aria-hidden="true">
+   		<div class="modal-dialog" role="document">
+   			<div class="modal-content">
+			<!-- CONTEUDO AQUI SERA CARREGADO VIA JS ABAIXO -->
+   			</div>
+   		</div>
+   </div>
+   
+   <!-- MODAL-INSERT VIA TEMPLATE / FOR DELETE ACTIONS -->
+   <div th:include="/contratante/ModalViewDelete::addDeleteModal"></div>
+   <!-- #### FIM CONTEUDO E MODAIS UTILIZADOS EM CADA ENTIDADE-VIEW #### -->
+    
+   <!--FOOTER-INSERT VIA TEMPLATE -->
+   <footer class="bg-dark text-white mt-4 fixed-bottom" th:include="/aFragments/footer::footer"></footer>
+	
+   <!--#### INICIO DO JAVASCRIPT #### -->   
+   <script th:replace="/bFragmentsCssJsLinks/shared_js_links::jqueryBaseLink"></script>
+   <script th:replace="/bFragmentsCssJsLinks/shared_js_links::popperBaseLink"></script>
+   <script th:replace="/bFragmentsCssJsLinks/shared_js_links::bootstrapBaseLink"></script>
+   
+   <!-- AQUI ACTIONS ESPECÍFICAS DESSA VIEW -->
+   <script th:replace="/bFragmentsCssJsLinks/shared_js_links::indexViewActions"></script>
+   
+   <!-- TESTES - EXCLUSIVOS PARA MARCARA NOS CAMPO DE IMPUT -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+   
+<!-- <script type="text/javascript"> -->
+<script type="text/javascript" th:inline="javascript">
+  
+  
+	  $(document).ready(function() {
+	  //EXEMPLO DE COMO CAPTURAR UM LINK E DIRECIONAR PARA DENTRO DO MODAL TESTE ACIMA
+	  
+		   $(".link-especial").on("click", function(e) {		   
+			   e.preventDefault();		  
+			   $("#myModal").modal("show").find(".modal-content").load($(this).attr("href"));
+			   //$("#myModal").modal("show").find(".modal-content").load($(this).attr("http://localhost:8081/contratanteForms/AddNew"));		   
+		   });
+	   
+	  });
+  
+  	   //VALIDAÇÕES EM JAVASCRIP PADRÃO DO BOOTSTRAP
+	  //Example starter JavaScript for disabling form submissions if there are invalid fields
+	  (function() {
+	    'use strict';
+	    window.addEventListener('load', function() {
+	      
+	      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	      var forms = document.getElementsByClassName('needs-validation');
+	      
+	      // Loop over them and prevent submission
+	      var validation = Array.prototype.filter.call(forms, function(form) {
+	        form.addEventListener('submit', function(event) {
+	          if (form.checkValidity() === false) {
+	            event.preventDefault();
+	            event.stopPropagation();
+	          }
+	          form.classList.add('was-validated');
+	        }, false);
+	      });
+	    }, false);
+	  })();
+	
+  	  //USADO NO BTNS DE SAIDA DESSE MODAL ModalViewCreateEdit.html
+  	  //PARA EVITAR RECARREGAR O MESMO ITEM ANTERIOR NO EDITAR E AFINS
+	  function refreshPage(){
+		    window.location.reload();
+	  }
+	
+	//MASCARAS DOS CAMPOS DE IMPUT
+	//$('#doCpfnum').mask('999.999.999-99');
+	$('#doCpfnum').mask('999.999.999-99', {"placeholder": "999.999.999-99"});
+	
+	//TESTE PARA TRANSFORMAR EM MAIUSCULOA A MEDIDA QUE VAMOS DIGITANDO...
+	function forceInputUppercase(e)
+	  {
+	    var start = e.target.selectionStart;
+	    var end = e.target.selectionEnd;
+	    e.target.value = e.target.value.toUpperCase();
+	    e.target.setSelectionRange(start, end);
+	  }
+	
+	//LINK COM O CAMPO QUE DEVERA SER OBRIGADO A UTILIZAR O UPERCASE
+	document.getElementById("doNome").addEventListener("keyup", forceInputUppercase, false);
+	//document.getElementById("field2").addEventListener("keyup", forceInputUppercase, false);
+
+</script>	
+
+   <!--#### FIM DO JAVASCRIPT #### --> 
+
+  </body>
+</html>
