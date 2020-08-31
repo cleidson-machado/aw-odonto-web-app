@@ -74,6 +74,7 @@ AFINS OS COMANDOS DE CRIAÇÃO DAS VERÇÕES E AFINS...
 -----> git branch
 
 # COMANDO PARA ADD TODOS ARQUIVOS DA PASTA
+-----> git status
 -----> git add -A
 
 # COMIT DAS ATUALUALIZAÇÕES O "am" É DE ARQUIVOS ADICIONADOS OU MODIFICADOS
@@ -81,6 +82,29 @@ AFINS OS COMANDOS DE CRIAÇÃO DAS VERÇÕES E AFINS...
 
 # ADD NOVO BRANCH (RAIZ)
 -----> git branch NOME_DO_BRANCH_SEM_ASPAS
+
+# TROCA DO BRANCH EM USO
+-----> git checkout NOME_DO_BRANCK_QUE_DESEJO ACESSAR_SEM_ASPAS
+-----> git branch -M master
+
+
+
+######################################## ACESSOS REMOTOS AO GIT
+Generating a new SSH key and adding it to the ssh-agent
+https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+-----> 1º GERAÇÃO DAS CHAVES PUBLICA E PRIVADA
+-----> c/Users/Root/.ssh/id_rsa
+-----> C:\Users\Root\.ssh
+
+-----> 2º ABRIR O ARQUIVO PUBLICO E COPIAR A CHAVE PUBLICA PARA ADD NO SITE DO GIT_HUB
+
+-----> 3º ADD O DIRETORIO REMOTO AS CONFIGS DO BASH
+-----> git remote add origin https://github.com/cleidson-machado/aw-odonto-web-app.git
+
+-----> VISUALIZAR OS REMOTOS DE CADA PASTA
+git remote -v
+git remote
 
 
 
