@@ -9,7 +9,7 @@ The Technologies or techniques used are:
 # Thymeleaf
 # Bootstrap
 # Javascipt
-# Firebird Data Base
+# POSTGRESQL Data Base
 # DBASE Migration
 
 

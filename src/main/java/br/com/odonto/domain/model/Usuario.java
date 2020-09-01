@@ -17,7 +17,7 @@ public class Usuario extends GenericCadastro {
 	@Column(name = "current_password", length = 64)
 	private String password;
 	
-	@Column(name = "level_role", length = 45)
+	@Column(name = "role", length = 45)
 	private String role;//NÍVEL DE ACESSO
 	
 	@Column(name = "user_enable", length = 45)
