@@ -62,7 +62,7 @@ public class ContratanteController {
 	@RequestMapping(path={"/saveOrUpdate", "contratante/saveOrUpdate"}, method=RequestMethod.POST)
 	public String saveOrUpdade(@Valid Contratante contratante, BindingResult bidingResult) {
 			if (bidingResult.hasErrors()) {			
-				bidingResult.addError(new FieldError("contratante", "email1", "A CARALHA DO E-MAIL DEVE SER INFORMADO!"));			
+				bidingResult.addError(new FieldError("contratante", "email1", "ANOTHER WARNING FROM BACK-END... Using a Controller"));			
 				//return "/contratante/Index :: myModalFragment";
 				//return "redirect:/";
 				//return "redirect:/contratanteForms/AddNew";
